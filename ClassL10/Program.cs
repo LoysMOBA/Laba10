@@ -65,7 +65,7 @@ namespace Matrix
                         Console.WriteLine((A * B).ToString());
                         break;
                     case "4":
-                        Console.WriteLine(A > B);
+                        Console.WriteLine(RMatrix.IncrementTest(A,B));
                         break;
                     case "5":
                         Console.WriteLine(RMatrix.Determinant(A));

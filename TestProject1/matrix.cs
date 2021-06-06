@@ -35,7 +35,7 @@ namespace Matrix1
                 {
                     for (int j = 0; j < nRows; j++)
                     {
-                        matrix[i, j] = rnd.Next(1, 10);
+                        matrix[i, j] = rnd.Next(1, 1);
                     }
                 }
             }
@@ -269,6 +269,7 @@ namespace Matrix1
                 double det = Determinant(this);
                 return (int)det;
             }
+
             public static RMatrix Inverse(RMatrix m, uint round = 0)
             {
                 if (m.GetnCols != m.GetnRows) throw new ArgumentException("Обратная матрица существует только для квадратных, невырожденных, матриц.");

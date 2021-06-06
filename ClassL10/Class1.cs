@@ -25,6 +25,7 @@ namespace Matrix1
                     }
                 }
             }
+
             public RMatrix(int nRows)
             {
                 this.nRows = nRows;
@@ -35,7 +36,7 @@ namespace Matrix1
                 {
                     for (int j = 0; j < nRows; j++)
                     {
-                        matrix[i, j] = rnd.Next(1, 1);
+                        matrix[i, j] = rnd.Next(1,1);
                     }
                 }
             }

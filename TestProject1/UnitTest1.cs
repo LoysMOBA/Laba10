@@ -50,10 +50,7 @@ namespace TestProject1
                 {
                     for (int j = 0; j < B.GetnRows; j++)
                     {
-                        for (int k = 0; k < A.GetnCols; k++)
-                        {
-                            tmp += A[i, k] + B[k, j];
-                        }
+                            tmp += A[i, j] + B[i, j];
                     }
                 }
                 //assert
@@ -71,19 +68,16 @@ namespace TestProject1
 
 
                 //act
-                double tmp = 0;
+                double actual = 0;
                 for (int i = 0; i < A.GetnRows; i++)
                 {
                     for (int j = 0; j < B.GetnRows; j++)
                     {
-                        for (int k = 0; k < A.GetnCols; k++)
-                        {
-                            tmp += A[i, k] - B[k, j];
-                        }
+                        actual = A[i,j] - B[i, j];
                     }
                 }
                 //assert
-                Assert.AreEqual(expected, tmp);
+                Assert.AreEqual(expected, actual);
             }
 
 
@@ -94,23 +88,17 @@ namespace TestProject1
                 int n = 3;
                 RMatrix A = new RMatrix(n);
                 RMatrix B = new RMatrix(n);
-
+                double expected = 9;
 
                 //act
                 double actual = 0;
-                double actual1 = 1;
                 for (int i = 0; i < n; i++)
                     for (int j = 0; j < n; j++)
                     {
-                        actual += A[i, j] -1;
-                    }
-                for (int i = 0; i < n; i++)
-                    for (int j = 0; j < n; j++)
-                    {
-                        actual1 += B[i, j] + 1;
+                        actual += A[i, j] * B[i,j];
                     }
                 //assert
-                Assert.AreEqual(actual1, actual);
+                Assert.AreEqual(expected,actual);
             }
 
             [TestMethod]
